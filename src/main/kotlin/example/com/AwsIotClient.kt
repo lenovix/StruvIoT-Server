@@ -19,7 +19,7 @@ import java.io.StringReader
 
 object AwsIotClient {
     private const val brokerUrl = "ssl://a2myxdlmwu3fx-ats.iot.ap-southeast-1.amazonaws.com:8883"
-    private const val clientId = "kotlin-iot-client"
+    private const val clientId = "StruvIoT-Client"
     private const val certificateFile = "certs/5ad413cbd19e293fab7e5ab5e057be06bfde0634e414171a821e985915a7164a-certificate.pem.crt"
     private const val privateKeyFile = "certs/5ad413cbd19e293fab7e5ab5e057be06bfde0634e414171a821e985915a7164a-private.pem.key"
     private const val rootCAFile = "certs/AmazonRootCA1.pem"

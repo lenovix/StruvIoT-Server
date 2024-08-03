@@ -1,21 +1,12 @@
 package example.com.plugins
 
-//import io.ktor.application.*
-//import io.ktor.response.*
-//import io.ktor.request.*
-//import io.ktor.routing.*
 import kotlinx.serialization.Serializable
-//import org.eclipse.paho.client.mqttv3.*
 import example.com.AwsIotClient
 import io.ktor.server.application.*
-import io.ktor.server.http.content.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.serialization.SerialName
-
-//@Serializable
-//data class DeviceStatus(val id_alat: String, val status: String)
 
 @Serializable
 data class DeviceStatus(
@@ -26,7 +17,7 @@ data class DeviceStatus(
 fun Application.configureRouting() {
     routing {
         get("/") {
-            call.respondText("Hello World!")
+            call.respondText("StruvIoT Server")
         }
         post("/reaktor") {
             val deviceStatus = call.receive<DeviceStatus>()
