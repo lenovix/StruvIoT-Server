@@ -1,4 +1,6 @@
 //AwsIotClient.kt
+@file:Suppress("SameParameterValue")
+
 package example.com
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider

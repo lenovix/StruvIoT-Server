@@ -6,6 +6,7 @@ import io.ktor.server.application.*
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
+@Suppress("DEPRECATION")
 class RoutingTest {
     @Test
     fun testReaktorEndpoint() {
