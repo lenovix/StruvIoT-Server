@@ -7,6 +7,9 @@ plugins {
     id("io.ktor.plugin") version "2.3.12"
     id("org.jetbrains.kotlin.plugin.serialization") version "2.0.0"
 }
+tasks.test {
+    useJUnitPlatform()
+}
 
 group = "example.com"
 version = "0.0.1"
@@ -23,12 +26,13 @@ repositories {
 }
 
 dependencies {
-//    implementation("io.ktor:ktor-server-core:2.1.0")
-//    implementation("io.ktor:ktor-server-netty:2.1.0")
-//    implementation("ch.qos.logback:logback-classic:1.2.3") // Pastikan versi ini sesuai
+    testImplementation("io.ktor:ktor-server-tests-jvm:2.0.3")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.7.10")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation("io.mockk:mockk:1.12.0")
+
     implementation("io.ktor:ktor-serialization-jackson:2.1.0")
     implementation("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5")
-//    implementation("org.bouncycastle:bcpkix-jdk15on:1.70")
     implementation("org.bouncycastle:bcprov-jdk15on:1.68")
     implementation("org.bouncycastle:bcpkix-jdk15on:1.68")
     implementation("software.amazon.awssdk.iotdevicesdk:aws-iot-device-sdk:1.21.0")

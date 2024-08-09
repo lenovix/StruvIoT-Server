@@ -1,3 +1,4 @@
+//Routing.kt
 package example.com.plugins
 
 import kotlinx.serialization.Serializable
@@ -19,21 +20,22 @@ fun Application.configureRouting() {
         get("/") {
             call.respondText("StruvIoT Server")
         }
+        //struv/id/pengering/control
         post("/reaktor") {
             val deviceStatus = call.receive<DeviceStatus>()
-            val topic = "struv/${deviceStatus.idAlat}/reaktor"
+            val topic = "struv/${deviceStatus.idAlat}/reaktor/control"
             AwsIotClient.publishToTopic(topic, deviceStatus.status)
             call.respondText("Data sent to topic: $topic")
         }
         post("/pengering") {
             val deviceStatus = call.receive<DeviceStatus>()
-            val topic = "struv/${deviceStatus.idAlat}/pengering"
+            val topic = "struv/${deviceStatus.idAlat}/pengering/control"
             AwsIotClient.publishToTopic(topic, deviceStatus.status)
             call.respondText("Data sent to topic: $topic")
         }
         post("/penyaring") {
             val deviceStatus = call.receive<DeviceStatus>()
-            val topic = "struv/${deviceStatus.idAlat}/penyaring"
+            val topic = "struv/${deviceStatus.idAlat}/penyaring/control"
             AwsIotClient.publishToTopic(topic, deviceStatus.status)
             call.respondText("Data sent to topic: $topic")
         }

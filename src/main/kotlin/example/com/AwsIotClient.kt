@@ -1,3 +1,4 @@
+//AwsIotClient.kt
 package example.com
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider
@@ -24,7 +25,7 @@ object AwsIotClient {
     private const val privateKeyFile = "certs/5ad413cbd19e293fab7e5ab5e057be06bfde0634e414171a821e985915a7164a-private.pem.key"
     private const val rootCAFile = "certs/AmazonRootCA1.pem"
 
-    private val client: MqttClient
+    var client: MqttClient
 
     init {
         Security.addProvider(BouncyCastleProvider())
